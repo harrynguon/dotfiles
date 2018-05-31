@@ -195,5 +195,4 @@ bar {
 }
 
 exec_always --no-startup-id "$HOME/Documents/polybar.sh"
-exec_always --no-startup-id feh --bg-scale "$HOME/Pictures/antler.png"
-exec_always --no-startup-id source ~/.config/fish/gp.fish
+exec_always --no-startup-id feh --bg-scale "$HOME/Pictures/fire_trees.png"
