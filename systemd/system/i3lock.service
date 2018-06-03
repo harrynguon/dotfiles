@@ -1,0 +1,15 @@
+[Unit]
+Description=i3lock on suspend (lid close)
+Before=sleep.target
+
+[Service]
+User=harry
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --separatorcolor=22222260 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c -c 000000 
+
+# i3lock 
+[Install]
+WantedBy=sleep.target
+
+

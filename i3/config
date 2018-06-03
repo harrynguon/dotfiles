@@ -195,4 +195,5 @@ bar {
 }
 
 exec_always --no-startup-id "$HOME/Documents/polybar.sh"
+exec_always --no-startup-id "$HOME/Documents/xset.sh"
 exec_always --no-startup-id feh --bg-scale "$HOME/Pictures/fire_trees.png"
