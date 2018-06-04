@@ -264,7 +264,7 @@ speaker-soundcard = default
 headphone-soundcard = default
 
 format-volume = <label-volume>
-label-volume = VOL %percentage:3:3%%
+label-volume = %percentage:2:3%%
 label-volume-foreground = ${root.foreground}
 label-volume-underline = #EFEFEF
 
