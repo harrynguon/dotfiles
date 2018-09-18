@@ -204,6 +204,7 @@ bindsym $mod+r mode "resize"
 bar {
   font pango:DejaVu Sans Mono, FontAwesome 10
   status_command i3status-rs ~/.config/i3/main_i3status_rust_config.toml
+  position top
   colors {
     separator #444444
     background #222222
@@ -240,7 +241,7 @@ exec --no-startup-id "sh -c 'sleep 1; exec i3-msg workspace 1'"
 for_window [class="^.*"] border pixel 2
 
 # i3-gaps adjustments
-gaps inner 15
+gaps inner 10
 gaps outer 10
 # smart borders -> only show borders if there's more than one window
 # in the current workspace
