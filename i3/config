@@ -44,9 +44,12 @@ bindsym $mod+space exec "rofi -combi-modi window,drun -show combi -modi combi"
 
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # decrease sound volume
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q sset Master 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -190,8 +193,26 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
+# DEFAULT I3STATUS
+# bar {
+#   status_command i3status
+#
+# }
+
+
 bar {
-        status_command i3status
+  font pango:DejaVu Sans Mono, FontAwesome 10
+    status_command i3status-rs ~/.config/i3/main_i3status_rust_config.toml
+  colors {
+    separator #444444
+    background #222222
+    statusline #666666
+    focused_workspace #d70a53 #d70a53 #ffffff
+    active_workspace #333333 #333333 #888888
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #eb709b #eb709b #ffffff
+  }
 }
 
 # Set shut down, restart and locking features
@@ -212,5 +233,12 @@ bindsym $mod+z exec google-chrome-stable
 # exec_always --no-startup-id "$HOME/Documents/polybar.sh"
 exec_always --no-startup-id "$HOME/Documents/xset.sh"
 exec_always --no-startup-id feh --bg-scale "$HOME/Pictures/fire_trees.png"
-exec --no-startup-id i3-msg 'workspace 8; exec $HOME/Documents/barrier_2.1.0/bin/barrier'
+exec --no-startup-id i3-msg 'workspace 8; exec barrier'
 exec --no-startup-id "sh -c 'sleep 1; exec i3-msg workspace 1'"
+
+#debian, okraits, slate
+
+client.focused #d70a53 #d70a53 #ffffff #8c0333
+client.focused_inactive #333333 #333333 #888888 #333333
+client.unfocused #333333 #333333 #888888 #333333
+client.urgent #eb709b #eb709b #ffffff #eb709b
