@@ -203,7 +203,7 @@ bindsym $mod+r mode "resize"
 
 bar {
   font pango:DejaVu Sans Mono, FontAwesome 10
-    status_command i3status-rs ~/.config/i3/main_i3status_rust_config.toml
+  status_command i3status-rs ~/.config/i3/main_i3status_rust_config.toml
   colors {
     separator #444444
     background #222222
@@ -235,6 +235,17 @@ exec_always --no-startup-id "$HOME/Documents/xset.sh"
 exec_always --no-startup-id feh --bg-scale "$HOME/Pictures/fire_trees.png"
 exec --no-startup-id i3-msg 'workspace 8; exec barrier'
 exec --no-startup-id "sh -c 'sleep 1; exec i3-msg workspace 1'"
+
+# disable titles of windows and leave enough pixels for the border
+for_window [class="^.*"] border pixel 2
+
+# i3-gaps adjustments
+gaps inner 15
+gaps outer 10
+# smart borders -> only show borders if there's more than one window
+# in the current workspace
+# smart_borders on
+# smart_gaps on
 
 #debian, okraits, slate
 
