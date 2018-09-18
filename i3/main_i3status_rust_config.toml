@@ -41,6 +41,14 @@ warning = 20.0
 alert = 10.0
 
 [[block]]
+block = "disk_space"
+path = "/home/harry"
+alias = "~"
+info_type = "available"
+unit = "GB"
+interval = 20
+
+[[block]]
 block = "battery"
 
 [[block]]
