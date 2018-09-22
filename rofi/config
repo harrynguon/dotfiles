@@ -1,0 +1,4 @@
+# rofi.theme: /usr/share/rofi/themes/solarized.rasi
+
+# Dark theme.
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
