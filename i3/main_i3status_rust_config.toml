@@ -1,6 +1,22 @@
-theme = "solarized-dark"
-icons = "awesome"
+[theme]
+name = "solarized-dark"
 
+[theme.overrides]
+idle_bg = "#070605"
+idle_fg = "#bdacbe"
+info_bg = "#070605"
+info_fg = "#bdacbe"
+good_bg = "#070605"
+good_fg = "#A15E83"
+warning_bg = "#533447"
+warning_fg = "#FFFFFF"
+critical_bg = "#813E63"
+critical_fg = "#FFFFFF"
+alternating_tint_bg = "#120006"
+alternating_tint_fg = "#FFFFFF"
+
+[icons]
+name = "awesome"
 
 [[block]]
 block = "music"
