@@ -1,1 +1,1 @@
-/home/harry/.config/fish/functions/sudo.fish
+alias sudo "python3 ~/.config/fish/functions/sudoer_lecture.py ; /usr/bin/sudo"
