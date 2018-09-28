@@ -1,4 +1,4 @@
-# i3-configuration-for-laptop
+# dotfiles
 
 ## Some of the stuff that was also done
 * Installed nerd fonts DejaVu Sans Mono to show the powerline design in the terminal
