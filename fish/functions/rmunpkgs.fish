@@ -1,1 +1,1 @@
-/home/harry/.config/fish/functions/rmunpkgs.fish
+alias rmunpkgs "pacman -Qdttq | sudo pacman -Rns -"
