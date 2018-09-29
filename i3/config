@@ -206,28 +206,29 @@ mode "resize" {
 #
 # }
 
-bar {
+# I3STATUS-RUST
+#  bar {
+#  
+#   # Hide all tray icons
+#   # tray_output none
+#   # Effectively hides the tray icons by pushing it off the screen
+#   # Setting tray output to none causes issues for Barrier
+#   tray_padding 25
 
-  # Hide all tray icons
-  # tray_output none
-  # Effectively hides the tray icons by pushing it off the screen
-  # Setting tray output to none causes issues for Barrier
-  tray_padding 25
-
-  # i3bar_command i3bar -t
-  font pango:DejaVu Sans Mono, FontAwesome 10
-  status_command i3status-rs ~/.config/i3/main_i3status_rust_config.toml
-  position top
-  colors {
-    separator #444444
-    background #222222
-    statusline #666666
-    focused_workspace #813E63 #813E63 #ffffff
-    active_workspace #070605 #070605 #888888
-    inactive_workspace #070605 #070605 #888888
-    urgent_workspace #DF1818 #DF1818 #ffffff
-  }
-}
+#   # i3bar_command i3bar -t
+#   font pango:DejaVu Sans Mono, FontAwesome 10
+#   status_command i3status-rs ~/.config/i3/main_i3status_rust_config.toml
+#   position top
+#   colors {
+#     separator #444444
+#     background #222222
+#     statusline #666666
+#     focused_workspace #813E63 #813E63 #ffffff
+#     active_workspace #070605 #070605 #888888
+#     inactive_workspace #070605 #070605 #888888
+#     urgent_workspace #DF1818 #DF1818 #ffffff
+#   }
+# }
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -243,14 +244,16 @@ mode "$mode_system" {
 }
 
 bindsym $mod+z exec google-chrome-stable
+bindsym $mod+c exec spotify
+bindsym $mod+n exec nm-connection-editor
 
 exec --no-startup-id compton
-# exec_always --no-startup-id "$HOME/Documents/polybar.sh"
+exec_always --no-startup-id "~/.local/bin/wal -R"
 exec_always --no-startup-id "$HOME/Documents/xset.sh"
+exec_always --no-startup-id "$HOME/Documents/polybar.sh"
 exec_always --no-startup-id feh --bg-scale "$HOME/Pictures/fire_trees.png"
-exec --no-startup-id i3-msg 'workspace 8; exec barrier'
-exec --no-startup-id "sh -c 'sleep 1; exec i3-msg workspace 1'"
-exec --no-startup-id "~/.local/bin/wal -R"
+# exec --no-startup-id i3-msg 'workspace 8; exec barrier'
+# exec --no-startup-id "sh -c 'sleep 1; exec i3-msg workspace 1'"
 
 # disable titles of windows and leave enough pixels for the border
 for_window [class="^.*"] border pixel 2
