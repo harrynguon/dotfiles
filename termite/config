@@ -1,0 +1,7 @@
+[options]
+font = DejaVuSansMono 13
+
+[colors]
+background = rgba(63, 63, 63, 0.55)
+
+
